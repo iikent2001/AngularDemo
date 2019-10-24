@@ -1,0 +1,71 @@
+<form (ngSubmit)="onSubmit()" #uform="ngForm">
+        <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" class="form-control" id="id" required 
+                [(ngModel)]="sm.id" name="id" />
+
+                <label for="name">name</label>
+                <input type="text" class="form-control" id="name" required 
+                [(ngModel)]="sm.name" name="name" />
+
+                <label for="echelon">echelon</label>
+                <input type="text" class="form-control" id="echelon" required 
+                    [(ngModel)]="sm.echelon" name="echelon"/>
+
+                <label for="birth">birth</label>
+                <input type="text" class="form-control" id="birth" required 
+                    [(ngModel)]="sm.birth" name="birth"
+                />
+            </div>
+    
+            <div class="form-group">
+               
+                <label for="phone">phone</label>
+                <input type="text" class="form-control" id="phone" required 
+                    [(ngModel)]="sm.phone" name="phone"
+                />
+
+                <label for="eduLevel">eduLevel</label>
+                <input type="text" class="form-control" id="eduLevel" required 
+                    [(ngModel)]="sm.eduLevel" name="eduLevel"
+                />
+
+                <label for="country">country</label>
+                <input type="text" class="form-control" id="country" required 
+                    [(ngModel)]="sm.country" name="country"
+                />
+
+                <label for="license">license</label>
+                <input type="text" class="form-control" id="license" required 
+                    [(ngModel)]="sm.license" name="license"
+                />
+            </div>
+            <button type="button" class="btn btn-primary" (click)="onSubmit()">submit</button>
+</form>
+
+<table  class="table table-striped table-dark">
+    <tr>
+        <th  scope="col">身分證字號</th>
+        <th scope="col">姓名</th>
+        <th scope="col">梯次</th>
+        <th scope="col">生日</th>
+        <th scope="col">手機號碼</th>
+        <th scope="col">教育程度</th>
+        <th scope="col">是否有駕照</th>
+        <th scope="col">城市</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    <tr *ngFor="let data of datas">
+        <td  scope="row">{{data.id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.echelon}}</td>
+        <td>{{data.birth}}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.eduLevel}}</td>
+        <td>{{data.license | licenseTran}}</td>
+        <td>{{data.country}}</td>
+        <td> <button type="button" class="btn btn-primary"  routerLink="updateSM/{{data.seq}}">edit</button></td>
+        <td> <button type="button" class="btn btn-primary" (click)="delete(data)">delete</button></td>
+    </tr>
+</table>

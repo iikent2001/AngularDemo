@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit()" #uform="ngForm">
+        <div class="form-group">
+            <label for="id">身分證字號</label>
+            <input type="text" class="form-control" id="id" required 
+            [(ngModel)]="sm.id" name="id" />
+        </div>
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" class="form-control" id="name" required 
+            [(ngModel)]="sm.name" name="name" />
+        </div>
+        <div class="form-group">
+            <label for="echelon">梯次</label>
+            <input type="text" class="form-control" id="echelon" required 
+                [(ngModel)]="sm.echelon" name="echelon"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="birth">生日</label>
+            <input type="text" class="form-control" id="birth" required 
+                [(ngModel)]="sm.birth" name="birth"
+            />
+        </div>
+        <div class="form-group">
+            <label for="phone">手機號碼</label>
+            <input type="text" class="form-control" id="phone" required 
+                [(ngModel)]="sm.phone" name="phone"
+            />
+        </div>
+        <div class="form-group">
+            <label for="eduLevel">教育程度</label>
+            <input type="text" class="form-control" id="eduLevel" required 
+                [(ngModel)]="sm.eduLevel" name="eduLevel"
+            />
+        </div>
+        <div class="form-group">
+            <label for="country">城市</label>
+            <input type="text" class="form-control" id="country" required 
+                [(ngModel)]="sm.country" name="country"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="license">是否有駕照</label>
+            <select class="form-control" class="form-control" id="license" name="license"  [(ngModel)]="sm.license" >
+                <option [value]="true"> 有 </option>
+                <option [value]="false"> 無 </option>
+            </select>
+        </div>
+
+
+        
+
+
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">submit</button>
+    </form>
